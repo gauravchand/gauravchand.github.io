@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Like What You See?</title>
+    <link rel="stylesheet" href="design.css">    
+</head>
+<body>
+    <div class="center-container">
+        <header>
+            <h1 id="typewriter-header"></h1>
+        </header>
+        <main>
+            <section>
+                <h2 id="typewriter"></h2>
+                <nav class="side-nav">
+                    <a id="nav-ctf"></a>
+                    <a id="nav-writeups"></a>
+                </nav>
+                <div class="tech-stack-diamond">
+                    <span class="tech-stack-label" id="tech-stack-typewriter"></span>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <a href="mailto:gt1749553@gmail.com">Email</a> |
+        <a href="https://linkedin.com/in/gaurav-thakur-79267a2a8/" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/gauravchand" target="_blank">GitHub</a> |
+        <a href="https://ctftime.org/team/372867" target="blank">CtfTime</a>
+    </footer>
+<script>
+const headerText = "Welcome to the Wired !!";
+const mainText = `Gaurav here, a cybersecurity enthusiast 
+having hands-on experience with Kali Linux
+and active participation in CTF competitions.
+I cover the following challenge categories:
+OSINT, Miscellaneous and Steganography.
+My team is ranked 27th All-India on CTFTime.`;
+const techStackText = "Tech Stack";
+let headerIndex = 0;
+let mainIndex = 0;
+let navIndex = 0;
+let divIndex = 0;
+const navLinks = [
+    { id: "nav-ctf", href : "https://en.wikipedia.org/wiki/Capture_the_flag_(cybersecurity)", text: "What's CTF?" },
+    { id: "nav-writeups", href: "ctf-writeups.html", text: "CTF Writeups" }
+];
+const speed = 40; // typing speed in ms
+
+function typeWriterHeader() {
+    if (headerIndex < headerText.length) {
+        document.getElementById("typewriter-header").innerHTML += headerText.charAt(headerIndex);
+        headerIndex++;
+        setTimeout(typeWriterHeader, speed);
+    } else {
+        setTimeout(typeWriterMain, speed * 2); // slight pause before main text
+    }
+}
+
+function typeWriterMain() {
+    document.getElementById("typewriter").style.visibility = "visible";
+    if (mainIndex < mainText.length) {
+        const char = mainText.charAt(mainIndex) === "\n" ? "<br>" : mainText.charAt(mainIndex);
+        document.getElementById("typewriter").innerHTML += char;
+        mainIndex++;
+        setTimeout(typeWriterMain, speed);
+    } else {
+        setTimeout(typeWriterNav, speed * 2); // Start nav typewriter after h2 finishes
+    }
+}
+function typeWriterNav(index = 0, charIndex = 0) {
+    if (index >= navLinks.length) {
+        setTimeout(() => typeWriterTechStack(), speed * 2); // Start tech stack after nav
+        return;
+    }
+    const link = navLinks[index];
+    const el = document.getElementById(link.id);
+    el.href = link.href;
+    if (link.id === "nav-ctf") {
+        el.target = "_blank";
+    }
+    if (charIndex === 0) {
+        el.style.visibility = "visible";
+    }
+    if (charIndex < link.text.length) {
+        el.innerHTML += link.text.charAt(charIndex);
+        setTimeout(() => typeWriterNav(index, charIndex + 1), speed);
+    } else {
+        setTimeout(() => typeWriterNav(index + 1, 0), 200);
+    }
+}
+
+function typeWriterTechStack(charIndex = 0) {
+    const el = document.getElementById("tech-stack-typewriter");
+    const diamond = document.querySelector(".tech-stack-diamond");
+    if (charIndex === 0) {
+        el.innerHTML = ""; // Clear previous content
+        el.style.visibility = "visible"; // Show label
+        diamond.style.visibility = "visible"; // Show diamond
+    }
+    if (charIndex < techStackText.length) {
+        el.innerHTML += techStackText.charAt(charIndex);
+        setTimeout(() => typeWriterTechStack(charIndex + 1), speed);
+    }
+}
+window.onload = typeWriterHeader;
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('lainwp.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+}
+
+.side-nav {
+    position: static;      /* Remove fixed positioning */
+    display: flex;
+    flex-direction: row;   /* Horizontal layout */
+    gap: 2em;
+    background: none;      /* Remove background */
+    padding: 0;
+    margin-top: 2em;       /* Space above nav */
+    justify-content: center;
+}
+
+.side-nav a {
+    color: #222;
+    text-decoration: none;
+    font-family: lain, monospace;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.2s;
+    text-align: center;
+    background: #fffbe6;
+    padding: 0.7em 2.2em;
+    border-radius: 999px;      /* Ellipse shape */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    margin: 0 0.2em;
+    display: inline-block;
+    border: 2px solid #e0c96d;
+    visibility: hidden;
+}
+
+.side-nav a:hover {
+    color: #0077b5;
+}
+
+.tech-stack-diamond {
+    width: 80px;
+    height: 80px;
+    margin: 4em auto 0 auto;
+    background: #d0f6ff;
+    position: relative;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    visibility: hidden;
+}
+
+.tech-stack-label {
+    display: block;
+    transform: rotate(-45deg);
+    font-family: lain, monospace;
+    font-weight: bold;
+    font-size: 1.05em;
+    background: none;
+    padding: 0.2em 0.5em;
+    text-align: center;
+    color: #222;
+}
+
+.center-container {
+    font-family: lain, monospace;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    margin-top: 4em;
+}
+
+header h1 {
+    display: inline-block;
+    background-color: rgba(241, 239, 239, 0.9); /* Only around text */
+    padding: 0.4em 1em;
+    border-radius: 0.4em;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+h2 {
+    visibility: hidden;
+    background-color: rgba( 200, 180, 250, 0.9);
+    padding: 0.4em 1em;
+    border-radius: 0.3em;
+    margin-bottom: 1em;
+    display: inline-block;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2em;
+    font-family: lain, monospace;
+    font-size: 1.1em;
+    background-color: gainsboro;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+}
+
+footer a {
+    color: black;
+}
+footer a:hover {
+    color: #0077b5;
+}
+
+@font-face {
+    font-family: 'lain';
+    src: url('love_letter_tw/Lovelt__.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
