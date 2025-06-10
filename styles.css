@@ -1,6 +1,6 @@
 body {
     min-height: 100vh;
-    background-image: url('laine.jpg');
+    background-image: url('images/laine.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 0 2em;
+    font-family: comic sans ms;
 }
 
 h1 {
@@ -60,6 +61,23 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+.challenge-image {
+    margin: 1.5em 0;
+    text-align: center;
+}
+
+.challenge-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.4em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.challenge-image figcaption {
+    margin-top: 0.5em;
+    font-style: italic;
+    color: #666;
 }
 
 @font-face {

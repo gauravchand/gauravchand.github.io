@@ -2,7 +2,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url('lainwp.jpg');
+    background-image: url('images/lainwp.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
