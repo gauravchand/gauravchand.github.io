@@ -62,9 +62,13 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
 .challenge-image {
     margin: 1.5em 0;
     text-align: center;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
 }
 
 .challenge-image img {
@@ -72,12 +76,24 @@ a:hover {
     height: auto;
     border-radius: 0.4em;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
 
 .challenge-image figcaption {
     margin-top: 0.5em;
     font-style: italic;
     color: #666;
+}
+@media screen and (max-width: 768px) {
+    .challenge-image {
+        margin: 1em 0;
+    }
+    
+    .challenge-image img {
+        width: 100%;
+    }
 }
 
 @font-face {
