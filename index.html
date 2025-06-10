@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Like What You See?</title>
+    <title>garychand</title>
     <link rel="stylesheet" href="design.css">    
 </head>
 <body>
@@ -16,10 +16,11 @@
                 <h2 id="typewriter"></h2>
                 <nav class="side-nav">
                     <a id="nav-ctf"></a>
-                    <a id="nav-writeups"></a>
+                    <a id="nav-tech"></a>
+                    
                 </nav>
-                <div class="tech-stack-diamond">
-                    <span class="tech-stack-label" id="tech-stack-typewriter"></span>
+                <div class="writeup-section">
+                    <a id="nav-writeup"></a>
                 </div>
             </section>
         </main>
@@ -32,22 +33,20 @@
     </footer>
 <script>
 const headerText = "Welcome to the Wired !!";
-const mainText = `Gaurav here, a cybersecurity enthusiast 
+const mainText = `Garychand here, a cybersecurity enthusiast 
 having hands-on experience with Kali Linux
 and active participation in CTF competitions.
-I cover the following challenge categories:
-OSINT, Miscellaneous and Steganography.
 My team is ranked 27th All-India on CTFTime.`;
-const techStackText = "Tech Stack";
 let headerIndex = 0;
 let mainIndex = 0;
 let navIndex = 0;
 let divIndex = 0;
 const navLinks = [
     { id: "nav-ctf", href : "https://en.wikipedia.org/wiki/Capture_the_flag_(cybersecurity)", text: "What's CTF?" },
-    { id: "nav-writeups", href: "ctf-writeups.html", text: "CTF Writeups" }
+    { id: "nav-tech", href: "tech-stack.html", text: "Tech Stack" },
 ];
-const speed = 40; // typing speed in ms
+const writeupLink = { id: "nav-writeup", href: "ctf-writeups.html", text: "Writeups"};
+const speed = 25; // typing speed in ms
 
 function typeWriterHeader() {
     if (headerIndex < headerText.length) {
@@ -72,7 +71,7 @@ function typeWriterMain() {
 }
 function typeWriterNav(index = 0, charIndex = 0) {
     if (index >= navLinks.length) {
-        setTimeout(() => typeWriterTechStack(), speed * 2); // Start tech stack after nav
+        setTimeout(() => typeWriterWriteup(), speed * 2); // Start writeup after nav
         return;
     }
     const link = navLinks[index];
@@ -91,20 +90,21 @@ function typeWriterNav(index = 0, charIndex = 0) {
         setTimeout(() => typeWriterNav(index + 1, 0), 200);
     }
 }
-
-function typeWriterTechStack(charIndex = 0) {
-    const el = document.getElementById("tech-stack-typewriter");
-    const diamond = document.querySelector(".tech-stack-diamond");
+function typeWriterWriteup(charIndex = 0) {
+    const el = document.getElementById(writeupLink.id);
+    el.href = writeupLink.href;
+    
     if (charIndex === 0) {
-        el.innerHTML = ""; // Clear previous content
-        el.style.visibility = "visible"; // Show label
-        diamond.style.visibility = "visible"; // Show diamond
+        el.style.visibility = "visible";
+        document.querySelector('.writeup-section').style.visibility = "visible";
     }
-    if (charIndex < techStackText.length) {
-        el.innerHTML += techStackText.charAt(charIndex);
-        setTimeout(() => typeWriterTechStack(charIndex + 1), speed);
+    
+    if (charIndex < writeupLink.text.length) {
+        el.innerHTML += writeupLink.text.charAt(charIndex);
+        setTimeout(() => typeWriterWriteup(charIndex + 1), speed);
     }
 }
+
 window.onload = typeWriterHeader;
 </script>
 </body>

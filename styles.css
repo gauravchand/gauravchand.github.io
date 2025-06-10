@@ -1,0 +1,70 @@
+body {
+    min-height: 100vh;
+    background-image: url('laine.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2em;
+}
+
+h1 {
+    background-color: rgb(151, 188, 182);
+    font-family: lain, monospace;
+    padding: 0.4em 1em;
+    border-radius: 0.4em;
+    margin-bottom: 1em;
+    display: inline-block;
+    margin-top: 2.6em;
+}
+
+.writeup-content {
+    background-color: rgba(241, 239, 239, 0.9);
+    padding: 2em;
+    border-radius: 0.4em;
+    margin: 1em auto;
+    max-width: 800px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.challenge {
+    margin-bottom: 3em;
+}
+
+.challenge h2 {
+    color: #222;
+    border-bottom: 2px solid #e0c96d;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    font-family: lain, monospace;
+}
+
+.description, .approach, .flag {
+    margin: 1.5em 0;
+}
+
+.description h3, .approach h3, .flag h3 {
+    font-family: lain, monospace;
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0077b5;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@font-face {
+    font-family: 'lain';
+    src: url('love_letter_tw/Lovelt__.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

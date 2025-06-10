@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>diverctf writeup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>DiverCTF Writeup</h1>
+    <div class="writeup-content">
+
+        <div class="challenge">
+            <h2>Challenge Name: bx</h2>
+            <div class="description">
+                <h3>Description</h3>
+                <p>Give coordinates of the “BX” signboard visible in this picture.</p>
+            </div>
+            <div class="approach">
+                <h3>Approach</h3>
+                Reverse image search on google lens.<br>
+                Copy the name shown in Japanese and put it in the search bar along with the <br>
+                image.<br>
+                This will show an Instagram reel which when you play shows the same building as <br>
+                shown in the given image.<br>
+                The description of the reel gives names of two stations namely “JR Ueno station” <br>
+                and “Uguisudani station”.<br>
+                Also note that the building next to the billboard has cross sign (likely to be a <br>
+                church).<br>
+                Considering these and looking between the stations gets us to the desired spot.
+            </div>
+            <div class="flag">
+                <h3>Flag</h3>
+                <p>Mark the pointer around this coordinate 35.7182597319839,<br>139.78083224178724</p>
+            </div>
+        </div>
+
+        <div class="challenge">
+            <h2>Challenge Name: finding_my_way</h2>
+            <div class="description">
+                <h3>Description</h3>
+                <p>Answer the Way number in OpenStreetMap of the building located at 34.735639, 138.994950. Flag Format: Diver25{123456789}</p>
+                <p>「建造物」は「地物」の一種である / a "building" is categorized into "features"</p>
+            </div>
+            <div class="approach">
+                <h3>Approach</h3>
+                Surf to openstreetmap.org and put the given coordinates in the search <br>
+                bar.<br>
+                Note that challenge gives hint that building is categorized into “features”.<br>
+                Right click the building and click on “query features”.<br>
+                It shows the features of the location and we find “Building” with its Way number <br>
+                #568613762
+            </div>
+            <div class="flag">
+                <h3>Flag</h3>
+                <p>Diver25{568613762}</p>
+            </div>
+        </div>
+
+        <div class="challenge">
+            <h2>Challenge Name: hidden_service</h2>
+            <div class="description">
+                <h3>Description</h3>
+                <p>See the attached file and capture the flag!</p>
+                <p>Flag形式 / Flag Format: Diver25{xxxxxxxxxxxxxxxxx}</p>
+            </div>
+            <div class="approach">
+                <h3>Approach</h3>
+                “flag is hidden in the underground” and .onion refer to only one thing <br>
+                in this context i.e. dark web.<br>
+                Use VPN and torr, then paste the link in the search bar.<br>
+                It will lead you to the site which displays the flag.
+            </div>
+            <div class="flag">
+                <h3>Flag</h3>
+                <p>[Visit hidden service to retrieve flag]</p>
+            </div>
+        </div>
+
+        <div class="challenge">
+            <h2>Challenge Name: ship</h2>
+            <div class="description">
+                <h3>Description</h3>
+                <p>This is a vessel operated by a some organisation. Answer the number <br>
+                that would remain the same if this vessel were to be sold to a foreign country in <br>
+                the future.</p>
+                <p>Flag Format: Diver25{ship name in <b>the local language</b>_number} (e.g. If the ship <br>
+                name is "ペンギン饅頭号" and the number is 1234567, the flag should <br>
+                be Diver25{ペンギン饅頭号_1234567}.)</p>
+                <p>Hint: The ship name doesn’t contain symbols.</p>
+            </div>
+            <div class="approach">
+                <h3>Approach</h3>
+                Reverse image search gives name of the ship “Shinyo Maru”.<br>
+                Visiting the “maritime database” site gives us details about the ship.<br><br>
+
+                A little bit of research on the part “number that would remain same if the ship <br>
+                were to be sold to foreign country in the future” points at the IMO number which <br>
+                is 9767675.<br><br>
+
+                The name of the ship is to be submitted in local language (Japanese), so visiting a <br>
+                native website would yield better outcome.<br>
+                Searching the owner of ship (in order to find their website) gives us “Tokyo <br>
+                University of Marine Science and Technology”.<br>
+                When you search “shinyo maru Tokyo university”, it leads us to native website <br>
+                “kaiyodai.ac.jp” which contains ship details in English.<br>
+                Changing web page language to Japanese to get the accurate name of the ship <br>
+                gives us “神鷹丸”.
+            </div>
+            <div class="flag">
+                <h3>Flag</h3>
+                <p>Diver25{神鷹丸_9767675}</p>
+            </div>
+        </div>
+
+        <div class="challenge">
+            <h2>Challenge Name: night_accident</h2>
+            <div class="description">
+                <h3>Description</h3>
+                <p>In this video, where did the car and bus almost collide?</p>
+                <a href="https://www.youtube.com/watch?v=jHgqCpJNL28" target="_blank">https://www.youtube.com/watch?v=jHgqCpJNL28</a>
+            </div>
+            <div class="approach">
+                <h3>Approach</h3>
+                So, in the video, we see car turning at a node (picking up pace) and the <br>
+                bus trying to overtake the bus ahead of it (almost crashing into the car).<br>
+                The important thing to be noted here is the name on the bus “SBS transit”, a little <br>
+                bit of searching implies that the video is based on Singapore.<br><br>
+
+                There were two buses and one of the bus’ number was 52, so I searched for the <br>
+                route in google maps.<br>
+                After that, try to find residential area in the route which (after some searching) was <br>
+                almost around the end of the bus route (115, Bishan Street 12, Singapore).
+            </div>
+            <div class="flag">
+                <h3>Flag</h3>
+                <p>Mark the pointer around this coordinate 1.3482429571661043,<br>103.84868476417184</p>
+            </div>
+        </div>
+
+        <div class="challenge">
+            <h2>Challenge Name: advertisement</h2>
+            <div class="description">
+                <h3>Description</h3>
+                <p>Where was the photograph in this article taken?</p>
+                <a href="https://web.archive.org/web/20250108154113/https://www.noticiasaominuto.com/mundo/2699746/kyiv-diz-que-russia-usou-como-recrutas-ate-180000-presidiarios" target="_blank">Archived Article</a>
+            </div>
+            <div class="approach">
+                <h3>Approach</h3>
+                Reverse image search spawns multiple news articles about the poster <br>
+                content.<br>
+                Visiting any site gives the location “St. Petersburg, Russia” (which is quite vague).<br><br>
+
+                Note that there is a text in russian in the image. Copy that and put in the search <br>
+                box of google maps.<br>
+                This will give multiple outlets of the shop shown in the image.<br>
+                A bit of manual search and visualization leads us to the exact location.
+            </div>
+            <div class="flag">
+                <h3>Flag</h3>
+                <p>Mark the pointer around this coordinate 59.942995897777465,<br>30.2788484550494</p>
+            </div>
+        </div>
+
+        <div class="challenge">
+            <h2>Challenge Name: Afghanistan</h2>
+            <div class="description">
+                <h3>Description</h3>
+                <p>When and where was the photo shown at 65-67 seconds in this video taken?</p>
+                <p>Flag format: Diver25{location name_YYYY-MM-DD} (location name should be in English)</p>
+                <a href="https://www.youtube.com/watch?v=NWQwx4-MeRg&t=65s" target="_blank">Watch Video</a>
+            </div>
+            <div class="approach">
+                <h3>Approach</h3>
+                Reverse image search along with “camp” in search bar.<br>
+                You’ll get “Camp Bostick”, now we need to find the date on which that image was <br>
+                taken.<br>
+                The reverse search gives us leads on the site “gettyimages.in”, visiting it and <br>
+                viewing the same image, we find the date on which the photograph was taken i.e. <br>
+                April 16, 2009.
+            </div>
+            <div class="flag">
+                <h3>Flag</h3>
+                <p>Diver25{Camp Bostick_2009-04-16}</p>
+            </div>
+        </div>
+
+        <div class="challenge">
+            <h2>Challenge Name: 00_engineer</h2>
+            <div class="description">
+                <h3>Description</h3>
+                <p>An software engineer's nameplate was picked up near Tokyo Station. This should be a lost item.</p>
+                <p>Answer the URL of the website (index page) of the company where this engineer works.</p>
+                <p>Flag Format: Diver25{https://google.com}</p>
+            </div>
+            <div class="approach">
+                <h3>Approach</h3>
+                Use “sherlock” tool on Kali terminal, the prompt being “sherlock <br>
+                kodai_sn”.<br>
+                You find the intended twitter account.<br>
+                In the bio, you find the personal website “https://kodai-sn.github.io/” where you <br>
+                find the name of the company “Magneight Software”.<br>
+                A google search gives you the URL of the website “magneight.com”
+            </div>
+            <div class="flag">
+                <h3>Flag</h3>
+                <p>Diver25{https://magneight.com}</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
