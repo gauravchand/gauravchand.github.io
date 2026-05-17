@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - garychand</title>
+    <link rel="stylesheet" href="design.css">    
+</head>
+<body>
+    <div class="experience-container">
+        <!-- Sidebar Timeline -->
+        <aside class="experience-sidebar">
+            <h3>Experience Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <a href="#exp-1" class="timeline-link">
+                        <h4>IT Support & Automation</h4>
+                        <p>Christ Academy, Navi Mumbai</p>
+                        <span>Aug 2025 — Present</span>
+                    </a>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <a href="#exp-2" class="timeline-link">
+                        <h4>MIS (Freelance)</h4>
+                        <p>Stainox Alloys, Mumbai</p>
+                        <span>Jan 2025 — Feb 2025</span>
+                    </a>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <a href="#exp-3" class="timeline-link">
+                        <h4>Cybersecurity Intern</h4>
+                        <p>CSRBOX & IBM Skillsbuild</p>
+                        <span>Oct 2024 — Nov 2024</span>
+                    </a>
+                </div>
+            </div>
+            <div class="back-to-home">
+                <a href="index.html">← Back to Home</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="experience-content">
+            <header class="experience-header">
+                <h1>My Experience</h1>
+                <p>Professional journey and roles</p>
+            </header>
+
+            <!-- Experience Cards -->
+            <section class="experience-grid">
+                <!-- Experience 1 -->
+                <article id="exp-1" class="experience-card">
+                    <div class="experience-header-card">
+                        <h2>IT Support & Automation</h2>
+                        <span class="experience-date">Aug 2025 — Present</span>
+                    </div>
+                    <p class="experience-company">Christ Academy, Navi Mumbai</p>
+                    <div class="experience-description">
+                        <p>Working as an IT Support Engineer focusing on support and automation initiatives. Responsibilities include:</p>
+                        <ul>
+                            <li>Providing technical support to end-users and staff</li>
+                            <li>Implementing IT automation solutions</li>
+                            <li>System administration and maintenance</li>
+                            <li>Troubleshooting and resolving technical issues</li>
+                        </ul>
+                    </div>
+                    <div class="experience-tech">
+                        <span class="tech-tag">IT Support</span>
+                        <span class="tech-tag">Automation</span>
+                        <span class="tech-tag">System Admin</span>
+                    </div>
+                </article>
+
+                <!-- Experience 2 -->
+                <article id="exp-2" class="experience-card">
+                    <div class="experience-header-card">
+                        <h2>MIS (Freelance)</h2>
+                        <span class="experience-date">Jan 2025 — Feb 2025</span>
+                    </div>
+                    <p class="experience-company">Stainox Alloys, Mumbai</p>
+                    <div class="experience-description">
+                        <p>Worked as a Management Information Systems freelancer on data analysis and reporting projects. Key contributions:</p>
+                        <ul>
+                            <li>Database management and optimization</li>
+                            <li>Data analysis and reporting</li>
+                            <li>Business intelligence solutions</li>
+                            <li>Process improvement initiatives</li>
+                        </ul>
+                    </div>
+                    <div class="experience-tech">
+                        <span class="tech-tag">MIS</span>
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">Business Intelligence</span>
+                    </div>
+                </article>
+
+                <!-- Experience 3 -->
+                <article id="exp-3" class="experience-card">
+                    <div class="experience-header-card">
+                        <h2>Cybersecurity Intern</h2>
+                        <span class="experience-date">Oct 2024 — Nov 2024</span>
+                    </div>
+                    <p class="experience-company">CSRBOX & IBM Skillsbuild</p>
+                    <div class="experience-description">
+                        <p>Completed a cybersecurity internship program with hands-on training and projects. Learned and applied:</p>
+                        <ul>
+                            <li>Network security fundamentals</li>
+                            <li>Ethical hacking and penetration testing basics</li>
+                            <li>Security best practices and frameworks</li>
+                            <li>Incident response and threat analysis</li>
+                        </ul>
+                    </div>
+                    <div class="experience-tech">
+                        <span class="tech-tag">Cybersecurity</span>
+                        <span class="tech-tag">Network Security</span>
+                        <span class="tech-tag">Ethical Hacking</span>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Smooth scrolling for timeline links
+        document.querySelectorAll('.timeline-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

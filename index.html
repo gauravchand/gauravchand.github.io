@@ -9,18 +9,24 @@
 <body>
     <div class="center-container">
         <header>
-            <h1 id="typewriter-header"></h1>
+            <h1>Welcome to the Wired !!</h1>
         </header>
         <main>
             <section>
-                <h2 id="typewriter"></h2>
+                <h2>Greetings 👋</h2>
+                <p>I am a cybersecurity enthusiast currently working as an IT Support Engineer.</p>
+                <p>I hold a Bachelors in CSE with honors in AI-ML.</p>
                 <nav class="side-nav">
-                    <a id="nav-ctf"></a>
-                    <a id="nav-tech"></a>
-                    
+                    <a href="experience.html">Experience</a>
+                    <a href="tech-stack.html">My Tech Stack</a>
                 </nav>
-                <div class="writeup-section">
-                    <a id="nav-writeup"></a>
+                <div class="sections-container">
+                    <div class="writeup-section">
+                        <a href="ctf-writeups.html">Writeups</a>
+                    </div>
+                    <div class="projects-section">
+                        <a href="projects.html">Projects</a>
+                    </div>
                 </div>
             </section>
         </main>
@@ -31,78 +37,8 @@
         <a href="https://github.com/gauravchand" target="_blank">GitHub</a> |
         <a href="https://ctftime.org/team/372867" target="blank">CTFtime</a>
     </footer>
-<script>
-const headerText = "Welcome to the Wired !!";
-const mainText = `garychand here 👋 \n I am a cybersecurity enthusiast currently working as an IT Support.\n I hold a Bachelors in CSE with honors in AI-ML.`;
-let headerIndex = 0;
-let mainIndex = 0;
-let navIndex = 0;
-let divIndex = 0;
-const navLinks = [
-    { id: "nav-ctf", href : "https://en.wikipedia.org/wiki/Capture_the_flag_(cybersecurity)", text: "What's CTF?" },
-    { id: "nav-tech", href: "tech-stack.html", text: "My Tech Stack" },
-];
-const writeupLink = { id: "nav-writeup", href: "ctf-writeups.html", text: "Writeups"};
-const speed = 25; // typing speed in ms
 
-function typeWriterHeader() {
-    if (headerIndex < headerText.length) {
-        document.getElementById("typewriter-header").innerHTML += headerText.charAt(headerIndex);
-        headerIndex++;
-        setTimeout(typeWriterHeader, speed);
-    } else {
-        setTimeout(typeWriterMain, speed * 2); // slight pause before main text
-    }
-}
-
-function typeWriterMain() {
-    document.getElementById("typewriter").style.visibility = "visible";
-    if (mainIndex < mainText.length) {
-        const char = mainText.charAt(mainIndex) === "\n" ? "<br>" : mainText.charAt(mainIndex);
-        document.getElementById("typewriter").innerHTML += char;
-        mainIndex++;
-        setTimeout(typeWriterMain, speed);
-    } else {
-        setTimeout(typeWriterNav, speed * 2); // Start nav typewriter after h2 finishes
-    }
-}
-function typeWriterNav(index = 0, charIndex = 0) {
-    if (index >= navLinks.length) {
-        setTimeout(() => typeWriterWriteup(), speed * 2); // Start writeup after nav
-        return;
-    }
-    const link = navLinks[index];
-    const el = document.getElementById(link.id);
-    el.href = link.href;
-    if (link.id === "nav-ctf") {
-        el.target = "_blank";
-    }
-    if (charIndex === 0) {
-        el.style.visibility = "visible";
-    }
-    if (charIndex < link.text.length) {
-        el.innerHTML += link.text.charAt(charIndex);
-        setTimeout(() => typeWriterNav(index, charIndex + 1), speed);
-    } else {
-        setTimeout(() => typeWriterNav(index + 1, 0), 200);
-    }
-}
-function typeWriterWriteup(charIndex = 0) {
-    const el = document.getElementById(writeupLink.id);
-    el.href = writeupLink.href;
-    
-    if (charIndex === 0) {
-        el.style.visibility = "visible";
-        document.querySelector('.writeup-section').style.visibility = "visible";
-    }
-    
-    if (charIndex < writeupLink.text.length) {
-        el.innerHTML += writeupLink.text.charAt(charIndex);
-        setTimeout(() => typeWriterWriteup(charIndex + 1), speed);
-    }
-}
-
-window.onload = typeWriterHeader;
+</script>
 </script>
 </body>
 </html>
