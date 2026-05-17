@@ -36,9 +36,25 @@
         <a href="https://linkedin.com/in/gaurav-ct/" target="_blank">LinkedIn</a> |
         <a href="https://github.com/gauravchand" target="_blank">GitHub</a> |
         <a href="https://ctftime.org/team/372867" target="blank">CTFtime</a>
+        <div class="visitor-count">
+            <p>Visitors: <span id="visitor-number">0</span></p>
+        </div>
     </footer>
 
-</script>
-</script>
+    <script>
+        // Visitor counter
+        function initializeVisitorCounter() {
+            let visitCount = localStorage.getItem('visitCount');
+            if (visitCount === null) {
+                visitCount = 1;
+            } else {
+                visitCount = parseInt(visitCount) + 1;
+            }
+            localStorage.setItem('visitCount', visitCount);
+            document.getElementById('visitor-number').textContent = visitCount;
+        }
+        
+        window.addEventListener('load', initializeVisitorCounter);
+    </script>
 </body>
 </html>
